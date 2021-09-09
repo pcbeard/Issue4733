@@ -62,8 +62,8 @@
     SDL_Event event;
     while (buttons.count < count) {
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_JOYBUTTONDOWN) {
-                SDL_GameControllerButton button = event.jbutton.button;
+            if (event.type == SDL_CONTROLLERBUTTONDOWN) {
+                SDL_GameControllerButton button = event.cbutton.button;
                 SDL_Log("%s", SDL_GameControllerGetStringForButton(button));
                 [buttons addObject:@(button)];
             }
